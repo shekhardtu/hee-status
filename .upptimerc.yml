@@ -1,0 +1,51 @@
+owner: shekhardtu
+repo: hee-status
+
+sites:
+  - name: Hee Marketing (hee.la)
+    url: https://hee.la
+    expectedStatusCodes:
+      - 200
+      - 301
+      - 302
+  - name: Hee Portal (app.hee.la)
+    url: https://app.hee.la
+    expectedStatusCodes:
+      - 200
+      - 302
+      - 307
+  - name: Hee Control Plane (api.hee.la)
+    url: https://api.hee.la/healthz
+    expectedStatusCodes:
+      - 200
+  - name: Hee Edge (edge.hee.la)
+    url: https://edge.hee.la
+    expectedStatusCodes:
+      - 200
+      - 301
+      - 302
+      - 404
+
+status-website:
+  cname: status.hee.la
+  logoUrl: https://hee.la/logo.svg
+  name: Hee Status
+  introTitle: Status & Uptime for Hee
+  introMessage: Live status for the Hee edge, portal, and control plane. Incidents and maintenance windows are posted here.
+  navbar:
+    - title: Status
+      href: /
+    - title: GitHub
+      href: https://github.com/shekhardtu/hee-status
+
+# Run every 5 minutes (Upptime default).
+# If you hit GH Actions rate limits on a paid plan, relax to 10-min intervals.
+assignees:
+  - shekhardtu
+
+user-agent: Upptime (+https://status.hee.la)
+commitMessages:
+  readmeContent: ":pencil: Update status summary"
+  summaryJson: ":card_file_box: Update status summary"
+  statusChange: "$EMOJI $SITE_NAME is $STATUS ($RESPONSE_CODE in $RESPONSE_TIME ms)"
+  graphsUpdate: ":chart_with_upwards_trend: Update graphs"
