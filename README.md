@@ -6,12 +6,12 @@ Powered by [Upptime](https://upptime.js.org). Every 5 minutes a GitHub Actions c
 
 ## Tracked endpoints
 
-| Site | URL |
-|------|-----|
-| Marketing | https://hee.la |
-| Portal | https://app.hee.la |
+| Site          | URL                        |
+| ------------- | -------------------------- |
+| Marketing     | https://hee.la             |
+| Portal        | https://app.hee.la         |
 | Control Plane | https://api.hee.la/healthz |
-| Edge | https://edge.hee.la |
+| Edge          | https://edge.hee.la        |
 
 ## Setup (one-time)
 
