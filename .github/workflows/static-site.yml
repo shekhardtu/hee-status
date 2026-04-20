@@ -1,16 +1,24 @@
 name: Static Site CI
 on:
-  repository_dispatch:
-    types: [static-site]
   schedule:
     - cron: "0 1 * * *"
+  repository_dispatch:
+    types: [static-site]
   workflow_dispatch:
 jobs:
   release:
+    name: Build static site
     runs-on: ubuntu-latest
     steps:
-      - uses: upptime/uptime-monitor@v1
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GH_PAT || github.token }}
+      - name: Generate site
+        uses: upptime/uptime-monitor@v1.41.0
         with:
           command: "site"
         env:
-          GH_PAT: ${{ secrets.GH_PAT }}
+          GH_PAT: ${{ secrets.GH_PAT || github.token }}
+          SECRETS_CONTEXT: ${{ toJson(secrets) }}
